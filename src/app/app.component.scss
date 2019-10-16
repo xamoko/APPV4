@@ -1,0 +1,145 @@
+/* @import "../../www/build/main.css"; */
+.toolbar-background-md {
+    background:#4fa757;
+    /*background: #3B93F7;*/
+}
+
+/*.button-md {
+    background-color: #285f20 !important;
+    margin: auto ;
+    width: 95%;
+    display: block;
+    margin-bottom: 7px;
+}*/
+
+ion-app.md [padding] .scroll-content {
+    padding: 0px;
+}
+
+ion-app.md [padding] {
+    padding: 0px;
+}
+
+.toolbar-title-md {
+   
+    color: #ffffff;
+}
+
+.toolbar-title-md {
+    color: #ffffff;
+    display: flex !important;
+    align-items: center !important;
+    height: 100%;
+}
+
+//seccion tickets
+.item-md{
+    padding-left: 0px;
+}
+
+.label-md {
+    margin: 0px 0px 0px 0;
+}
+ 
+.item-md.item-block .item-inner {
+    padding-right: 0px !important;
+    border-bottom: 1px solid #dedede;
+}
+
+//secciones
+.sec1{
+    background-color:#50a0d2;
+    box-shadow: inset -3px 6px 16px 0.5px;
+}
+
+.sec2{
+    /*background-color: #3f6f38;*/
+    background-color: #666666;
+}
+
+.secPending{
+    background-color: #b71818;
+}
+
+.sec3{
+    background-color: #1f4e88;
+}
+
+.sec4{
+    background-color: #11325a;
+}
+
+//texto
+.fontPrimaria{
+    color:#000 !important;
+}
+
+.sub-tittles{
+    color: #595959;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px; 
+    margin-top: 10px;
+}
+
+.div-sub-tittles{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.icon-sub-tittles{
+    position: relative;
+    top: 1px;
+    color: #595959;
+    font-size: 20px !important;
+}
+
+.icon-item-list{
+    position: relative;
+    top: 1px;
+    color: #595959;
+    font-size: 20px !important;
+}
+
+.toolbar-background {
+    //background-color: #e6e6e6;
+    background-color: #488AFF;
+}
+
+.toolbar-text-style {
+    //color: #000;
+    color: #fff;
+    font-size: 15px;
+}
+
+ion-header {
+    .button-md {
+        box-shadow: none;
+    }
+
+    .toolbar-title {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+}
+
+.back-button.show-back-button {
+    z-index: 9999;
+    display: inline-block;
+}
+
+ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}

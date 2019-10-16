@@ -1,0 +1,64 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+
+ <!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Tabs + Side Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content class="ion-padding">
+	
+  <ion-button expand="block" routerLink="/menu/first/tab1">Login</ion-button>
+</ion-content>   -->
+
+	<ion-content  class="ion-padding gradiente no-scroll">
+
+<div class="spacer"></div>
+
+<ion-card clas="card-md">
+	<p class="imagen-style">
+		
+		<img src="assets/LogoSN_1010x178.png" class="imagen-superior" />
+	</p>
+</ion-card>
+
+<div class="spacer"></div>
+
+<ion-card class="center">
+	<ion-card-content>
+		<ion-list style="margin-bottom:15px;">
+			<ion-item style="background-color: #fff0;">
+				<ion-icon class="icon-login" slot="start" name="contact"></ion-icon>
+				<ion-label position="floating">Usuario</ion-label>
+				<ion-input type="text" class="text-input" [(ngModel)]="usuario" name="usuario"
+					(ionChange)='onChangeUserValue()' (keypress)="eventHandler($event.keyCode, b)"></ion-input>
+			</ion-item>
+			<ion-item style="background-color: #fff0;">
+				<ion-icon class="icon-login"  slot="start"  name="lock"></ion-icon>
+				<ion-label position="floating">Contraseña</ion-label>
+				<ion-input [type]="passwordType" class="text-input" [(ngModel)]="password" #b name="password"
+					(ionChange)='onChangePasswordValue()' (keypress)="eventHandlerPassword($event.keyCode)">
+				</ion-input>
+				<ion-icon [name]="passwordIcon" class="password-icon" (click)='hideShowPassword()' slot="end">
+				</ion-icon>
+			</ion-item>
+			<div></div>
+		</ion-list>
+		<div style="margin-top: 40%;" class="ion-padding">
+			<button id="btn-login"  block (click)="ingresar()" class="btn-login button-md" disabled>Entrar</button>
+			<p style="color:#000; text-align:center; margin-top:10px;">¿Olvidaste tu contraseña?</p>
+		</div>
+	</ion-card-content>
+</ion-card> 
+
+
+</ion-content>

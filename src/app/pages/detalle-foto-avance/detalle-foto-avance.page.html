@@ -1,0 +1,43 @@
+<ion-header>
+		<ion-toolbar color="primary" mode="ios">
+    <ion-buttons slot="start">
+	  <ion-menu-button ></ion-menu-button>
+	  <ion-icon icon="../../assets/icon/arrow-left-solid.svg" (click)="BotonRegresar()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="padding: 20px;">
+		<ion-item>
+			<ion-slides>
+				<ion-slide (ionSlideDidChange)="slideChanged()">
+					<img [src]="registro.url">
+				</ion-slide>
+			</ion-slides>
+		</ion-item>
+	</div>
+
+	<ion-grid>
+		<ion-row justify-content-start>
+			<ion-col col-12>
+				<ion-card>
+					<h2 style=" font-size: 30px; text-transform: uppercase; text-align: left; border-bottom: 1px solid;">Detalles:</h2>
+				</ion-card>
+			</ion-col>
+			<ion-col col-12 style="margin-left: auto; margin-right: auto">
+				<div *ngFor="let item of items">
+					<button class="actions-detail-button-width" ion-button icon-right round (click)="vistaPanoramica(item)">
+							Enviar a Supervisor
+							<ion-icon name="md-exit"></ion-icon>
+						</button>
+					</div>
+				<!-- <p style="text-align: justify;"> <b>Descripción:</b> {{ registro.description }}</p>
+				<p style="text-align: justify;"> <b>Latitud:</b> {{ registro.geoLatitude }}</p>
+				<p style="text-align: justify;"> <b>Longitud:</b> {{ registro.geoLongitude }}</p>
+				<p style="text-align: justify;"> <b>¿Quién la subió?:</b> {{ registro.completeName }}</p>
+				<p style="text-align: justify;"> <b>Fecha-Hora:</b> {{ registro.creationDate }}</p> -->
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

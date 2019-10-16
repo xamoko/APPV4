@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar color="primary" mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+      <ion-icon icon="../../assets/icon/arrow-left-solid.svg" (click)="BotonRegresar()"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      <div *ngFor="let normas of normaTipoArr">
+        <div *ngFor="let listanormas of normas.NormaItem">
+            <span>{{ listanormas.policy_description }}</span><br>
+            <span style="font-size: 15px;">{{normas.policy_type_description}}</span>  
+        </div>
+    </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+    <div *ngFor="let normas of normaTipoArr">
+     <!--  <ion-item  class="item-stable" >
+        <button class="button-stable">
+          <ion-icon [name]="isGroupShown(normas) ? 'remove' : 'add'" class="action-icon-list"></ion-icon>
+        </button>
+        &nbsp;
+        <span class="list-tittle">{{normas.policy_type_description}}</span>
+        <button class="button-stable button-map" (click)="showZone()">
+          <ion-icon name="map" class="action-icon-list"></ion-icon>
+        </button>
+      </ion-item> -->
+      <div *ngFor="let listanormas of normas.NormaItem">
+      <!--   <button ion-item class="item-accordion"*ngIf="isGroupShown(normas)" style="margin-left: 10px;">
+            <ion-icon [name]="isGroupShown(listanormas) ? 'remove' : 'add'"></ion-icon>
+            &nbsp;
+            {{ listanormas.policy_description }}
+        </button> -->
+        <div *ngFor="let specNorma of listanormas.NormaEspecItem">
+          <button ion-item class="item-accordion" (click)="taskSelected(specNorma, specNorma.firebaseCode)" *ngIf="isGroupShown2(normas, listanormas)" style="margin-left: 40px;">
+             {{ specNorma.policy_specification_description }}
+             <!-- {{ specNorma.firebaseCode }} -->
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--button ion-item *ngFor="let zonas of item" (click)="zoneColapse()">
+      <div>
+        <ion-icon class="icon-item-list" item-left name="folder-open"></ion-icon>
+        {{zonas.nombreZona}}
+        <ion-list inset style="margin-left: 10px;">
+          <button ion-item *ngFor="let listaTareas of zonas.listasTareas" (click)="taskListColapse()">
+            <div>
+              <ion-icon class="icon-item-list" item-left name="folder-open"></ion-icon>
+              {{listaTareas.listaTarea}}
+              <ion-list inset style="margin-left: 10px;">
+                <button ion-item *ngFor="let tareas of listaTareas.tareas" (click)="taskSelected(tarea)">
+                  <div>
+                    <ion-icon class="icon-item-list" item-left name="square-outline"></ion-icon>
+                    {{tareas.tarea}}
+                  </div>
+                </button>
+              </ion-list>
+            </div>
+          </button>
+        </ion-list>
+      </div>
+    </button-->
+  </ion-list>
+</ion-content>

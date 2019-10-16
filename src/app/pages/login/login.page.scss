@@ -1,0 +1,264 @@
+page-login {
+    z-index: 100%;
+}
+
+ion-content {
+    --left: 0;
+    --top: 0;
+    --position: relative;
+    --display: block;
+    --width: 100%;
+    --height: 100%;
+    --contain: layout size style;
+  }
+
+  .ion-page > ion-content {
+    --position: absolute;
+  }
+
+  .imagen-style{
+    --text-align:center
+  }
+
+  .spacer {
+    width: 100%;
+    height: 30px;
+  }
+
+.gradiente{
+    
+    --ion-background-color: linear-gradient(315deg, #ffffff 0%, #f2f2f2 74%);
+    /* --overflow: hidden; */
+  }
+
+  img {
+    --max-width: 100%;
+    --border: 0;
+  }
+
+  ion-card {
+    --display: block;
+    --overflow: hidden;
+    --margin-bottom: 2em;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: transparent !important;
+  }
+
+  ion-card img {
+    --display: block;
+    --width: 100%;
+  }
+
+  .swiper-zoom-container > img,
+.swiper-zoom-container > svg,
+.swiper-zoom-container > canvas {
+  --max-width: 100%;
+  --max-height: 100%;
+  -o-object-fit: contain;
+  --object-fit: contain;
+}
+
+  .imagen-superior{
+    width: 70%;
+    height: 6%;
+    margin: auto;
+  }
+
+  .password-icon {
+    --font-size: 2rem !important;
+    --position: relative !important;
+    --top: 20px !important;
+    margin: 20 auto !important;
+    --color: #595959 !important;
+  }
+
+  ion-card-content {
+    display: block;
+  }
+
+  ion-icon {
+  display: inline-block;
+  font-family: "Ionicons";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  text-transform: none;
+  speak: none;
+}
+
+.icon-login {
+    position: relative;
+    top: 12px;
+    color: #595959;
+    font-size: 20px !important;
+  }
+
+  ion-label {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  ion-input:focus {
+    outline: none;
+  }
+
+  ion-input,
+ion-textarea {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+}
+
+.text-input {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 92%;
+    width: calc(100% - 10px);
+    border: 0;
+    --background: transparent;
+  }
+
+.text-input::-moz-placeholder {
+    --color: #999;
+  }
+  
+  .text-input:-ms-input-placeholder {
+    --color: #999;
+  }
+  
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    --color: #999;
+  }
+  
+  textarea.text-input {
+    display: block;
+  }
+  
+  .text-input[disabled] {
+    opacity: .4;
+  }
+  
+  input.text-input:-webkit-autofill {
+    --background-color: transparent;
+  }
+  
+  .platform-mobile textarea.text-input {
+    resize: none;
+  }
+
+  .text-input-md {
+    margin: 13px 8px;
+    padding: 0;
+    width: calc(100% - 8px - 8px);
+  }
+
+  .item-label-stacked .text-input-md,
+.item-label-floating .text-input-md {
+  margin-left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: calc(100% - 8px);
+}
+
+.label-md {
+    margin: 13px 8px 13px 0;
+  }
+  .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating] {
+    --color: #1a6eff !important;
+  }
+
+  .focus-outline button:focus,
+.focus-outline, .btn-login:focus {
+  --border-color: #51a7e8;
+  --outline: 2px solid #51a7e8;
+  -webkit-box-shadow: 0 0 8px 1px #51a7e8;
+  --box-shadow: 0 0 8px 1px #51a7e8;
+}
+
+a[disabled],
+button[disabled],
+[ion-button][disabled] {
+  cursor: default;
+  opacity: .4;
+  pointer-events: none;
+}
+
+
+  .btn-login {
+    /*background: #1fc1c7 !important;*/
+    /*background: #333333 !important;*/
+    margin: auto;
+    width: 100%;
+    height: 6%;
+    display: block;
+    margin-bottom: 7px;
+    border: 0px;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    color: #fff;
+    background-color: #488aff;
+    
+
+  }
+
+  /* .button-md {
+    border-radius: 2px;
+    overflow: hidden;
+    height: 3.6rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #488aff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0.4rem 0.2rem;
+    padding: 0 1.1em;
+  } */
+
+  .button-md:hover:not(.disable-hover) {
+    background-color: #488aff;
+  }
+  
+  .button-md.activated {
+    background-color: #427feb;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21), 0 0 0 0 transparent;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21), 0 0 0 0 transparent;
+  }
+  
+  .button-md .button-effect {
+    background-color: #fff;
+  }
+  

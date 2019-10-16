@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary" mode="ios">
+      <ion-title>
+          <span class="toolbar-text-style" style="text-transform: uppercase;">{{ Project.description }}</span>
+      </ion-title>
+      <ion-icon icon="../../assets/icon/file-signature-solid.svg" (click)="openSignatureModel()" slot="end" style="width: 10%;"></ion-icon>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-icon icon="../../assets/icon/arrow-left-solid.svg" (click)="BotonRegresar()"></ion-icon>
+      <!-- <button ion-button icon-only (click)="openSignatureModel()">
+        </button> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <div (swipe)="swipeEvent($event)">
+        <!--div class="sec2"><p class="fontPrimaria" style="padding:20px;margin: 0px;"> Lista de Tareas</p></div--> 
+        <!-- <div class="div-sub-tittles">
+          <ion-icon class="icon-sub-tittles" item-left name="list"></ion-icon>
+          <span class="sub-tittles">Tareas</span>
+        </div> -->
+      
+        <ion-list inset>
+          <div *ngFor="let detalles of zonasArr">
+            <ion-item  class="item-stable item-inner" >
+              
+              <button class="button-stable" (click)="toggleGroup(detalles)">
+                <ion-icon [name]="isGroupShown(detalles) ? 'remove' : 'add'" class="action-icon-list"></ion-icon>
+              </button>
+              &nbsp;
+              <span class="list-tittle" (click)="toggleGroup(detalles)">{{detalles.zone}}</span>
+              <button class="button-stable button-map" (click)="showZone()">
+                <ion-icon name="map" class="action-icon-list"></ion-icon>
+              </button>
+            
+            </ion-item>
+      
+            <div *ngFor="let detallesZona of detalles.zonaSuperiorItem ">
+              
+                <button class="item-accordion item-block2 item-md2" (click)="toggleGroup(detallesZona)"  *ngIf="isGroupShown(detalles)" style="margin-left: 10px;">
+                  
+                  <ion-icon [name]="isGroupShown(detallesZona) ? 'remove' : 'add'" ></ion-icon>
+                  <span style="margin-left: 10px; font-weight: bold; font-size: 20px;" (click)="toggleGroup(detallesZona)">{{detallesZona.subzone}}</span>
+                </button>
+            
+                
+                
+              
+      
+            <div *ngFor="let listaTarea of detallesZona.listasTareasItem">
+              <button ion-item class="item-accordion item-md2 item-block2" (click)="toggleGroup(listaTarea)" *ngIf="isGroupShown(detallesZona)" style="margin-left: 15px;">
+                  <ion-icon [name]="isGroupShown(listaTarea) ? 'remove' : 'add'"></ion-icon>
+                  &nbsp;
+                  {{ listaTarea.listaTareaId }} - {{ listaTarea.nombreListaTarea }}:
+              </button>
+            <div *ngFor="let tarea of listaTarea.tareaItem">
+                <button ion-item class="item-accordion item-block2 item-md2" (click)="taskSelected(tarea)" *ngIf="isGroupShown2(detalles,detallesZona, listaTarea)" style="margin-left: 40px;">
+                    {{ tarea.tareaId }} - {{ tarea.nombreTarea }}
+                </button>
+              </div> 
+            </div>
+          </div>
+        </div>
+      
+          <!--button ion-item *ngFor="let zonas of item" (click)="zoneColapse()">
+            <div>
+              <ion-icon class="icon-item-list" item-left name="folder-open"></ion-icon>
+              {{zonas.nombreZona}}
+              <ion-list inset style="margin-left: 10px;">
+                <button ion-item *ngFor="let listaTareas of zonas.listasTareas" (click)="taskListColapse()">
+                  <div>
+                    <ion-icon class="icon-item-list" item-left name="folder-open"></ion-icon>
+                    {{listaTareas.listaTarea}}
+                    <ion-list inset style="margin-left: 10px;">
+                      <button ion-item *ngFor="let tareas of listaTareas.tareas" (click)="taskSelected(tarea)">
+                        <div>
+                          <ion-icon class="icon-item-list" item-left name="square-outline"></ion-icon>
+                          {{tareas.tarea}}
+                        </div>
+                      </button>
+                    </ion-list>
+                  </div>
+                </button>
+              </ion-list>
+            </div>
+          </button-->
+        </ion-list>
+      </div>
+      
+</ion-content>

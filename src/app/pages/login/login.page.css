@@ -1,0 +1,4 @@
+.gradiente{
+    color: var(--background-color, red);
+    /* background-image: linear-gradient(315deg, #ffffff 0%, #f2f2f2 74%); */
+  }

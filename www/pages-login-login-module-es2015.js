@@ -1,0 +1,285 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-login-login-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/login/login.page.html":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/login/login.page.html ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>login</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n -->\n\n <!-- <ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-title>Tabs + Side Menu</ion-title>\n  </ion-toolbar>\n</ion-header>\n \n<ion-content class=\"ion-padding\">\n\t\n  <ion-button expand=\"block\" routerLink=\"/menu/first/tab1\">Login</ion-button>\n</ion-content>   -->\n\n\t<ion-content  class=\"ion-padding gradiente no-scroll\">\n\n<div class=\"spacer\"></div>\n\n<ion-card clas=\"card-md\">\n\t<p class=\"imagen-style\">\n\t\t\n\t\t<img src=\"assets/LogoSN_1010x178.png\" class=\"imagen-superior\" />\n\t</p>\n</ion-card>\n\n<div class=\"spacer\"></div>\n\n<ion-card class=\"center\">\n\t<ion-card-content>\n\t\t<ion-list style=\"margin-bottom:15px;\">\n\t\t\t<ion-item style=\"background-color: #fff0;\">\n\t\t\t\t<ion-icon class=\"icon-login\" slot=\"start\" name=\"contact\"></ion-icon>\n\t\t\t\t<ion-label position=\"floating\">Usuario</ion-label>\n\t\t\t\t<ion-input type=\"text\" class=\"text-input\" [(ngModel)]=\"usuario\" name=\"usuario\"\n\t\t\t\t\t(ionChange)='onChangeUserValue()' (keypress)=\"eventHandler($event.keyCode, b)\"></ion-input>\n\t\t\t</ion-item>\n\t\t\t<ion-item style=\"background-color: #fff0;\">\n\t\t\t\t<ion-icon class=\"icon-login\"  slot=\"start\"  name=\"lock\"></ion-icon>\n\t\t\t\t<ion-label position=\"floating\">Contraseña</ion-label>\n\t\t\t\t<ion-input [type]=\"passwordType\" class=\"text-input\" [(ngModel)]=\"password\" #b name=\"password\"\n\t\t\t\t\t(ionChange)='onChangePasswordValue()' (keypress)=\"eventHandlerPassword($event.keyCode)\">\n\t\t\t\t</ion-input>\n\t\t\t\t<ion-icon [name]=\"passwordIcon\" class=\"password-icon\" (click)='hideShowPassword()' slot=\"end\">\n\t\t\t\t</ion-icon>\n\t\t\t</ion-item>\n\t\t\t<div></div>\n\t\t</ion-list>\n\t\t<div style=\"margin-top: 40%;\" class=\"ion-padding\">\n\t\t\t<button id=\"btn-login\" ion-button block (click)=\"ingresar()\" class=\"btn-login\" disabled>Entrar</button>\n\t\t\t<p style=\"color:#000; text-align:center; margin-top:10px;\">¿Olvidaste tu contraseña?</p>\n\t\t</div>\n\t\t<ion-button expand=\"block\" routerLink=\"/menu/first/tab1\">Login</ion-button>\n\t</ion-card-content>\n</ion-card> \n\n\n</ion-content>");
+
+/***/ }),
+
+/***/ "./src/app/pages/login/login.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/pages/login/login.module.ts ***!
+  \*********************************************/
+/*! exports provided: LoginPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _login_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./login.page */ "./src/app/pages/login/login.page.ts");
+
+
+
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _login_page__WEBPACK_IMPORTED_MODULE_6__["LoginPage"]
+    }
+];
+let LoginPageModule = class LoginPageModule {
+};
+LoginPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+        ],
+        declarations: [_login_page__WEBPACK_IMPORTED_MODULE_6__["LoginPage"]]
+    })
+], LoginPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/login/login.page.scss":
+/*!*********************************************!*\
+  !*** ./src/app/pages/login/login.page.scss ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("page-login {\n  z-index: 100%; }\n\nion-content {\n  --left: 0;\n  --top: 0;\n  --position: relative;\n  --display: block;\n  --width: 100%;\n  --height: 100%;\n  --contain: layout size style; }\n\n.ion-page > ion-content {\n  --position: absolute; }\n\n.imagen-style {\n  --text-align:center\n  ; }\n\n.spacer {\n  width: 100%;\n  height: 10px; }\n\n.gradiente {\n  --ion-background-color: linear-gradient(315deg, #ffffff 0%, #f2f2f2 74%);\n  /* --overflow: hidden; */ }\n\nimg {\n  --max-width: 100%;\n  --border: 0; }\n\nion-card {\n  --display: block;\n  --overflow: hidden;\n  --margin-bottom: 2em;\n  box-shadow: none;\n  background: transparent !important; }\n\nion-card img {\n  --display: block;\n  --width: 100%; }\n\n.swiper-zoom-container > img,\n.swiper-zoom-container > svg,\n.swiper-zoom-container > canvas {\n  --max-width: 100%;\n  --max-height: 100%;\n  -o-object-fit: contain;\n  --object-fit: contain; }\n\n.imagen-superior {\n  width: 65%;\n  height: 15%;\n  margin: auto; }\n\n.password-icon {\n  --font-size: 2rem !important;\n  --position: relative !important;\n  --top: 20px !important;\n  --margin: 0 auto !important;\n  --color: #595959 !important; }\n\nion-card-content {\n  display: block; }\n\nion-icon {\n  display: inline-block;\n  font-family: \"Ionicons\";\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: normal;\n  line-height: 1;\n  text-rendering: auto;\n  text-transform: none;\n  speak: none; }\n\n.icon-login {\n  position: relative;\n  top: 12px;\n  color: #595959;\n  font-size: 20px !important; }\n\nion-label {\n  margin: 0;\n  display: block;\n  overflow: hidden;\n  flex: 1;\n  font-size: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n\nion-input:focus {\n  outline: none; }\n\nion-input,\nion-textarea {\n  position: relative;\n  display: block;\n  flex: 1;\n  width: 100%; }\n\n.text-input {\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -webkit-appearance: none;\n  appearance: none;\n  border-radius: 0;\n  display: inline-block;\n  flex: 1;\n  width: 92%;\n  width: calc(100% - 10px);\n  border: 0;\n  --background: transparent; }\n\n.text-input::-moz-placeholder {\n  --color: #999; }\n\n.text-input:-ms-input-placeholder {\n  --color: #999; }\n\n.text-input::-webkit-input-placeholder {\n  text-indent: 0;\n  --color: #999; }\n\ntextarea.text-input {\n  display: block; }\n\n.text-input[disabled] {\n  opacity: .4; }\n\ninput.text-input:-webkit-autofill {\n  --background-color: transparent; }\n\n.platform-mobile textarea.text-input {\n  resize: none; }\n\n.text-input-md {\n  margin: 13px 8px;\n  padding: 0;\n  width: calc(100% - 8px - 8px); }\n\n.item-label-stacked .text-input-md,\n.item-label-floating .text-input-md {\n  margin-left: 0;\n  margin-top: 8px;\n  margin-bottom: 8px;\n  width: calc(100% - 8px); }\n\n.label-md {\n  margin: 13px 8px 13px 0; }\n\n.item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating] {\n  --color: #1a6eff !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy94YXZpZXJtb3JhbGVzL0RvY3VtZW50cy94aW5ldC9zZXJ2aWNlX25ldHdvcmtfQXBwVjQvc3JjL2FwcC9wYWdlcy9sb2dpbi9sb2dpbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFhLEVBQUE7O0FBR2pCO0VBQ0ksU0FBTztFQUNQLFFBQU07RUFDTixvQkFBVztFQUNYLGdCQUFVO0VBQ1YsYUFBUTtFQUNSLGNBQVM7RUFDVCw0QkFBVSxFQUFBOztBQUdaO0VBQ0Usb0JBQVcsRUFBQTs7QUFHYjtFQUNFO0VBQWEsRUFBQTs7QUFHZjtFQUNFLFdBQVc7RUFDWCxZQUFZLEVBQUE7O0FBR2hCO0VBRUksd0VBQXVCO0VBQ3ZCLHdCQUFBLEVBQXlCOztBQUczQjtFQUNFLGlCQUFZO0VBQ1osV0FBUyxFQUFBOztBQUdYO0VBQ0UsZ0JBQVU7RUFDVixrQkFBVztFQUNYLG9CQUFnQjtFQUdoQixnQkFBZ0I7RUFDaEIsa0NBQWtDLEVBQUE7O0FBR3BDO0VBQ0UsZ0JBQVU7RUFDVixhQUFRLEVBQUE7O0FBR1Y7OztFQUdBLGlCQUFZO0VBQ1osa0JBQWE7RUFDYixzQkFBc0I7RUFDdEIscUJBQWEsRUFBQTs7QUFHYjtFQUNFLFVBQVU7RUFDVixXQUFXO0VBQ1gsWUFBWSxFQUFBOztBQUdkO0VBQ0UsNEJBQVk7RUFDWiwrQkFBVztFQUNYLHNCQUFNO0VBQ04sMkJBQVM7RUFDVCwyQkFBUSxFQUFBOztBQUdWO0VBQ0UsY0FBYyxFQUFBOztBQUdoQjtFQUNBLHFCQUFxQjtFQUNyQix1QkFBdUI7RUFDdkIsa0NBQWtDO0VBQ2xDLG1DQUFtQztFQUNuQyxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLG1CQUFtQjtFQUNuQixjQUFjO0VBQ2Qsb0JBQW9CO0VBQ3BCLG9CQUFvQjtFQUNwQixXQUFXLEVBQUE7O0FBR2I7RUFDSSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULGNBQWM7RUFDZCwwQkFBMEIsRUFBQTs7QUFHNUI7RUFDRSxTQUFTO0VBQ1QsY0FBYztFQUNkLGdCQUFnQjtFQUloQixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLHVCQUF1QjtFQUN2QixtQkFBbUIsRUFBQTs7QUFHckI7RUFDRSxhQUFhLEVBQUE7O0FBR2Y7O0VBRUEsa0JBQWtCO0VBQ2xCLGNBQWM7RUFJZCxPQUFPO0VBQ1AsV0FBVyxFQUFBOztBQUdiO0VBQ0kscUJBQXFCO0VBQ3JCLG9CQUFvQjtFQUNwQix3QkFBd0I7RUFDeEIsZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixxQkFBcUI7RUFJckIsT0FBTztFQUNQLFVBQVU7RUFDVix3QkFBd0I7RUFDeEIsU0FBUztFQUNULHlCQUFhLEVBQUE7O0FBR2pCO0VBQ0ksYUFBUSxFQUFBOztBQUdWO0VBQ0UsYUFBUSxFQUFBOztBQUdWO0VBQ0UsY0FBYztFQUNkLGFBQVEsRUFBQTs7QUFHVjtFQUNFLGNBQWMsRUFBQTs7QUFHaEI7RUFDRSxXQUFXLEVBQUE7O0FBR2I7RUFDRSwrQkFBbUIsRUFBQTs7QUFHckI7RUFDRSxZQUFZLEVBQUE7O0FBR2Q7RUFDRSxnQkFBZ0I7RUFDaEIsVUFBVTtFQUNWLDZCQUE2QixFQUFBOztBQUcvQjs7RUFFQSxjQUFjO0VBQ2QsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQix1QkFBdUIsRUFBQTs7QUFHekI7RUFDSSx1QkFBdUIsRUFBQTs7QUFFekI7RUFDRSwyQkFBUSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbG9naW4vbG9naW4ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsicGFnZS1sb2dpbiB7XG4gICAgei1pbmRleDogMTAwJTtcbn1cblxuaW9uLWNvbnRlbnQge1xuICAgIC0tbGVmdDogMDtcbiAgICAtLXRvcDogMDtcbiAgICAtLXBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAtLWRpc3BsYXk6IGJsb2NrO1xuICAgIC0td2lkdGg6IDEwMCU7XG4gICAgLS1oZWlnaHQ6IDEwMCU7XG4gICAgLS1jb250YWluOiBsYXlvdXQgc2l6ZSBzdHlsZTtcbiAgfVxuXG4gIC5pb24tcGFnZSA+IGlvbi1jb250ZW50IHtcbiAgICAtLXBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgfVxuXG4gIC5pbWFnZW4tc3R5bGV7XG4gICAgLS10ZXh0LWFsaWduOmNlbnRlclxuICB9XG5cbiAgLnNwYWNlciB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMHB4O1xuICB9XG5cbi5ncmFkaWVudGV7XG4gICAgXG4gICAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogbGluZWFyLWdyYWRpZW50KDMxNWRlZywgI2ZmZmZmZiAwJSwgI2YyZjJmMiA3NCUpO1xuICAgIC8qIC0tb3ZlcmZsb3c6IGhpZGRlbjsgKi9cbiAgfVxuXG4gIGltZyB7XG4gICAgLS1tYXgtd2lkdGg6IDEwMCU7XG4gICAgLS1ib3JkZXI6IDA7XG4gIH1cblxuICBpb24tY2FyZCB7XG4gICAgLS1kaXNwbGF5OiBibG9jaztcbiAgICAtLW92ZXJmbG93OiBoaWRkZW47XG4gICAgLS1tYXJnaW4tYm90dG9tOiAyZW07XG5cbiAgICAtd2Via2l0LWJveC1zaGFkb3c6IG5vbmU7XG4gICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xuICB9XG5cbiAgaW9uLWNhcmQgaW1nIHtcbiAgICAtLWRpc3BsYXk6IGJsb2NrO1xuICAgIC0td2lkdGg6IDEwMCU7XG4gIH1cblxuICAuc3dpcGVyLXpvb20tY29udGFpbmVyID4gaW1nLFxuLnN3aXBlci16b29tLWNvbnRhaW5lciA+IHN2Zyxcbi5zd2lwZXItem9vbS1jb250YWluZXIgPiBjYW52YXMge1xuICAtLW1heC13aWR0aDogMTAwJTtcbiAgLS1tYXgtaGVpZ2h0OiAxMDAlO1xuICAtby1vYmplY3QtZml0OiBjb250YWluO1xuICAtLW9iamVjdC1maXQ6IGNvbnRhaW47XG59XG5cbiAgLmltYWdlbi1zdXBlcmlvcntcbiAgICB3aWR0aDogNjUlO1xuICAgIGhlaWdodDogMTUlO1xuICAgIG1hcmdpbjogYXV0bztcbiAgfVxuXG4gIC5wYXNzd29yZC1pY29uIHtcbiAgICAtLWZvbnQtc2l6ZTogMnJlbSAhaW1wb3J0YW50O1xuICAgIC0tcG9zaXRpb246IHJlbGF0aXZlICFpbXBvcnRhbnQ7XG4gICAgLS10b3A6IDIwcHggIWltcG9ydGFudDtcbiAgICAtLW1hcmdpbjogMCBhdXRvICFpbXBvcnRhbnQ7XG4gICAgLS1jb2xvcjogIzU5NTk1OSAhaW1wb3J0YW50O1xuICB9XG5cbiAgaW9uLWNhcmQtY29udGVudCB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gIH1cblxuICBpb24taWNvbiB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZm9udC1mYW1pbHk6IFwiSW9uaWNvbnNcIjtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC12YXJpYW50OiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiBub3JtYWw7XG4gIGxpbmUtaGVpZ2h0OiAxO1xuICB0ZXh0LXJlbmRlcmluZzogYXV0bztcbiAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XG4gIHNwZWFrOiBub25lO1xufVxuXG4uaWNvbi1sb2dpbiB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHRvcDogMTJweDtcbiAgICBjb2xvcjogIzU5NTk1OTtcbiAgICBmb250LXNpemU6IDIwcHggIWltcG9ydGFudDtcbiAgfVxuXG4gIGlvbi1sYWJlbCB7XG4gICAgbWFyZ2luOiAwO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgLXdlYmtpdC1ib3gtZmxleDogMTtcbiAgICAtd2Via2l0LWZsZXg6IDE7XG4gICAgLW1zLWZsZXg6IDE7XG4gICAgZmxleDogMTtcbiAgICBmb250LXNpemU6IGluaGVyaXQ7XG4gICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XG4gICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgfVxuXG4gIGlvbi1pbnB1dDpmb2N1cyB7XG4gICAgb3V0bGluZTogbm9uZTtcbiAgfVxuXG4gIGlvbi1pbnB1dCxcbmlvbi10ZXh0YXJlYSB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogYmxvY2s7XG4gIC13ZWJraXQtYm94LWZsZXg6IDE7XG4gIC13ZWJraXQtZmxleDogMTtcbiAgLW1zLWZsZXg6IDE7XG4gIGZsZXg6IDE7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4udGV4dC1pbnB1dCB7XG4gICAgLW1vei1hcHBlYXJhbmNlOiBub25lO1xuICAgIC1tcy1hcHBlYXJhbmNlOiBub25lO1xuICAgIC13ZWJraXQtYXBwZWFyYW5jZTogbm9uZTtcbiAgICBhcHBlYXJhbmNlOiBub25lO1xuICAgIGJvcmRlci1yYWRpdXM6IDA7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIC13ZWJraXQtYm94LWZsZXg6IDE7XG4gICAgLXdlYmtpdC1mbGV4OiAxO1xuICAgIC1tcy1mbGV4OiAxO1xuICAgIGZsZXg6IDE7XG4gICAgd2lkdGg6IDkyJTtcbiAgICB3aWR0aDogY2FsYygxMDAlIC0gMTBweCk7XG4gICAgYm9yZGVyOiAwO1xuICAgIC0tYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gIH1cblxuLnRleHQtaW5wdXQ6Oi1tb3otcGxhY2Vob2xkZXIge1xuICAgIC0tY29sb3I6ICM5OTk7XG4gIH1cbiAgXG4gIC50ZXh0LWlucHV0Oi1tcy1pbnB1dC1wbGFjZWhvbGRlciB7XG4gICAgLS1jb2xvcjogIzk5OTtcbiAgfVxuICBcbiAgLnRleHQtaW5wdXQ6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIge1xuICAgIHRleHQtaW5kZW50OiAwO1xuICAgIC0tY29sb3I6ICM5OTk7XG4gIH1cbiAgXG4gIHRleHRhcmVhLnRleHQtaW5wdXQge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICB9XG4gIFxuICAudGV4dC1pbnB1dFtkaXNhYmxlZF0ge1xuICAgIG9wYWNpdHk6IC40O1xuICB9XG4gIFxuICBpbnB1dC50ZXh0LWlucHV0Oi13ZWJraXQtYXV0b2ZpbGwge1xuICAgIC0tYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIH1cbiAgXG4gIC5wbGF0Zm9ybS1tb2JpbGUgdGV4dGFyZWEudGV4dC1pbnB1dCB7XG4gICAgcmVzaXplOiBub25lO1xuICB9XG5cbiAgLnRleHQtaW5wdXQtbWQge1xuICAgIG1hcmdpbjogMTNweCA4cHg7XG4gICAgcGFkZGluZzogMDtcbiAgICB3aWR0aDogY2FsYygxMDAlIC0gOHB4IC0gOHB4KTtcbiAgfVxuXG4gIC5pdGVtLWxhYmVsLXN0YWNrZWQgLnRleHQtaW5wdXQtbWQsXG4uaXRlbS1sYWJlbC1mbG9hdGluZyAudGV4dC1pbnB1dC1tZCB7XG4gIG1hcmdpbi1sZWZ0OiAwO1xuICBtYXJnaW4tdG9wOiA4cHg7XG4gIG1hcmdpbi1ib3R0b206IDhweDtcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDhweCk7XG59XG5cbi5sYWJlbC1tZCB7XG4gICAgbWFyZ2luOiAxM3B4IDhweCAxM3B4IDA7XG4gIH1cbiAgLml0ZW0taW5wdXQtaGFzLWZvY3VzIC5sYWJlbC1tZFtmbG9hdGluZ10sIC5pbnB1dC1oYXMtZm9jdXMgLmxhYmVsLW1kW2Zsb2F0aW5nXSB7XG4gICAgLS1jb2xvcjogIzFhNmVmZiAhaW1wb3J0YW50O1xuICB9XG4gICJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/pages/login/login.page.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pages/login/login.page.ts ***!
+  \*******************************************/
+/*! exports provided: LoginPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPage", function() { return LoginPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm2015/http.js");
+/* harmony import */ var _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/sqlite/sqlite */ "./src/app/services/sqlite/sqlite.ts");
+/* harmony import */ var _services_proveedorusers_proveedorusers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/proveedorusers/proveedorusers */ "./src/app/services/proveedorusers/proveedorusers.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _api_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../api.component */ "./src/api.component.ts");
+
+
+
+//import { IonicPage } from 'ionic-angular';
+
+
+
+
+
+/* const LCrypt = require('lcrypt');
+const lcrypt = new LCrypt('TTQww2BVROs0PEU8Zc+1TE6NsKs0Y4PHesXnzyXYtRo='); */
+//@IonicPage()
+let LoginPage = class LoginPage {
+    constructor(alertController, http, navCtrl, sqliteService, proveedor, router) {
+        this.alertController = alertController;
+        this.http = http;
+        this.navCtrl = navCtrl;
+        this.sqliteService = sqliteService;
+        this.proveedor = proveedor;
+        this.router = router;
+        this.passwordType = 'password';
+        this.passwordIcon = 'eye-off';
+    }
+    ngOnInit() {
+    }
+    login() {
+        let url = _api_component__WEBPACK_IMPORTED_MODULE_7__["enlace"] + "/loginApp";
+        return url;
+    }
+    hideShowPassword() {
+        this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+        this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+    }
+    onChangeUserValue() {
+        let userAux = this.usuario;
+        let passwordAux = this.password;
+        var element = document.getElementById("btn-login");
+        if ((userAux != undefined) && (userAux != "") && (passwordAux != undefined) && (passwordAux != "")) {
+            element.disabled = false;
+        }
+        else {
+            element.disabled = true;
+        }
+    }
+    onChangePasswordValue() {
+        let userAux = this.usuario;
+        let passwordAux = this.password;
+        var element = document.getElementById("btn-login");
+        if ((userAux != undefined) && (userAux != "") && (passwordAux != undefined) && (passwordAux != "")) {
+            element.disabled = false;
+        }
+        else {
+            element.disabled = true;
+        }
+    }
+    eventHandler(keyCode, nextElement) {
+        let userAux = this.usuario;
+        if ((keyCode == 13) && (userAux != undefined) && (userAux != ""))
+            nextElement.setFocus();
+    }
+    eventHandlerPassword(keyCode, nextElement) {
+        let userAux = this.usuario;
+        let passwordAux = this.password;
+        if ((keyCode == 13) && (userAux != undefined) && (userAux != "") && (passwordAux != undefined) && (passwordAux != ""))
+            this.ingresar();
+    }
+    ingresar() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            let url = _api_component__WEBPACK_IMPORTED_MODULE_7__["enlace"] + "loginApp";
+            /* let headers2 = new Headers();
+            headers2.append('Content-Type', 'application/json');
+            headers2.append('Access-Control-Allow-Origin', '*');
+            headers2.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+            headers2.append('Content-Type', 'application/x-www-form-urlencoded'); */
+            let data = {
+                user: this.usuario,
+                password: this.password
+            };
+            /* let crypt ={
+                user: lcrypt.encode(data.user),
+                password: lcrypt.encode(data.password)
+            };  */
+            console.log("Inicio de Login... " + data.user, data.password);
+            //console.log("Inicio de Login... " + crypt.user, crypt.password);
+            console.log("url: " + url);
+            this.http.post(url, JSON.stringify(data), { headers: _api_component__WEBPACK_IMPORTED_MODULE_7__["headers2"] })
+                .subscribe((crypt) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                this.resToken = crypt.json();
+                this.sqliteService.token = this.resToken.token;
+                this.sqliteService.UserId = this.resToken.id;
+                this.sqliteService.entitiesId = this.resToken.entities_id;
+                this.start_valid_date = this.resToken.start_valid_date;
+                this.end_valid_date = this.resToken.end_valid_date;
+                this.last_change_user_id = this.resToken.last_change_user_id;
+                this.date = this.resToken.date;
+                this.entities = this.resToken.entities;
+                this.entities_id = this.resToken.entities_id;
+                this.error = this.resToken.error;
+                this.user_type_id = this.resToken.user_type_id;
+                console.log("Token: " + this.resToken.token);
+                console.log("Id: " + this.resToken.id);
+                console.log("start_valid_date: " + this.resToken.start_valid_date);
+                console.log("end_valid_date: " + this.resToken.end_valid_date);
+                console.log("last_change_user_id: " + this.resToken.last_change_user_id);
+                console.log("entities_id: " + this.resToken.entities_id);
+                console.log("error: " + this.resToken.error);
+                console.log("status: " + this.resToken.status);
+                console.log("user_type_id: " + this.user_type_id);
+                if (this.error == 4) {
+                    const alert3 = yield this.alertController.create({
+                        header: 'Alert',
+                        subHeader: 'Subtitle',
+                        buttons: ['OK']
+                    });
+                    yield alert3.present();
+                }
+                else {
+                    if (this.error == 5) {
+                        let alert2 = yield this.alertController.create({
+                            header: "Login",
+                            subHeader: "El usuario ha caducado",
+                            buttons: ['Ok']
+                        });
+                        yield alert2.present();
+                    }
+                    else {
+                        if (this.error == "invalid_credentials") {
+                            let alert1 = yield this.alertController.create({
+                                header: "Login",
+                                subHeader: "Credenciales Inválidas",
+                                buttons: ['Ok']
+                            });
+                            yield alert1.present();
+                        }
+                        else {
+                            if (this.user_type_id == '2' || this.user_type_id == '1,2') {
+                                if (this.resToken.status === 'succes') {
+                                    this.router.navigate(['/menu/first/tab1']);
+                                    console.log("succes");
+                                }
+                                else {
+                                    let alert4 = yield this.alertController.create({
+                                        header: "Login",
+                                        subHeader: "No autorizado",
+                                        buttons: ['Ok']
+                                    });
+                                    yield alert4.present();
+                                }
+                            }
+                            else {
+                                let alert5 = yield this.alertController.create({
+                                    header: "Login",
+                                    subHeader: "No tiene acceso a la aplicación",
+                                    buttons: ['Ok']
+                                });
+                                yield alert5.present();
+                            }
+                        }
+                    }
+                }
+            }));
+        });
+    }
+};
+LoginPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+    { type: _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"] },
+    { type: _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_4__["SqliteProvider"] },
+    { type: _services_proveedorusers_proveedorusers__WEBPACK_IMPORTED_MODULE_5__["ProveedorusersProvider"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('password', { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], LoginPage.prototype, "passwordInput", void 0);
+LoginPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/login/login.page.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.page.scss */ "./src/app/pages/login/login.page.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"], _angular_http__WEBPACK_IMPORTED_MODULE_3__["Http"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_4__["SqliteProvider"], _services_proveedorusers_proveedorusers__WEBPACK_IMPORTED_MODULE_5__["ProveedorusersProvider"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
+], LoginPage);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=pages-login-login-module-es2015.js.map

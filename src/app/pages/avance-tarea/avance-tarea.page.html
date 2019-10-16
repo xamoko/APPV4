@@ -1,0 +1,61 @@
+<ion-header>
+		<ion-toolbar color="primary" mode="ios">
+		<ion-buttons slot="start">
+				<ion-menu-button></ion-menu-button>
+				<ion-icon icon="../../assets/icon/arrow-left-solid.svg" (click)="BotonRegresar()"></ion-icon>
+			  </ion-buttons>
+    <ion-title style="width: 100%;
+		height: 100%;
+		text-align: center;
+		padding: unset">
+			<!-- <ion-icon style="font-size: 2.0em; margin-left:80%;" ios="ios-attach" md="md-add" (click)="Open('photo')"></ion-icon> -->
+			<ion-icon style="font-size: 2.0em; margin-left:80%;" ios="ios-attach" md="md-add" (click)="takePicturesCamera()"></ion-icon>
+		</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="list-md">
+		<ion-item *ngIf="registros == 0">
+			<div class="sec2">
+				<p class="fontPrimaria" style="padding:20px;margin: 0px;">
+					Aun no hay fotos de Avance que mostrar
+				</p>
+			</div>
+		</ion-item>
+
+		<ion-item class="item-padding" *ngFor="let item of todo | async" style="margin-left: -30px;">
+			<!-- <div *ngIf="FBcode == item.identificador"> -->
+				<ion-item class="item-md item-block">
+			<ion-avatar item-start (click)="Open('D', item)" class="estilo-img ">
+				<img [src]="item.url" class="ion-avatar">
+			</ion-avatar>
+			<ion-note item-end>
+				<!-- <h3 style="font-size: 20px; color: #404040;"><b>Nombre:</b> {{ registro.photoName }}</h3>
+				<h3 style="font-size: 12px; color: #404040;"><b>Descripción:</b> {{ registro.description }}</h3>
+				<h3 style="font-size: 12px; color: #404040;"><b>Latitud:</b> {{ registro.geoLatitude }}</h3>
+				<h3 style="font-size: 12px; color: #404040;"><b>Longitud:</b> {{ registro.geoLongitude }}</h3> -->
+				<h3 style="font-size: 12px; color: #404040;"><b>¿Quién la subió?:</b> <br>{{ item.nombre }}</h3>
+				<!-- <h3 style="font-size: 12px; color: #404040;"><b>Fecha - Hora:</b> {{ registro.creationDate }}</h3> -->
+			</ion-note>
+				</ion-item>
+		<!-- </div> -->
+		
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+    <ion-col size="12">
+      <ion-col size="6">
+      <ion-icon class="icon-action-buttons" name="camera" (click)="takePicturesCamera()" style="font-size: 30px;"></ion-icon>
+      </ion-col>
+      <ion-col size="6">
+      <ion-icon class="icon-action-buttons" name="images" (click)="takePicturesGallery()" style="font-size: 30px;"></ion-icon>
+      </ion-col>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-footer>
