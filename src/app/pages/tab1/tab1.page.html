@@ -8,6 +8,7 @@
 
 </ion-content>
  -->
+ <ion-app>
 
  <ion-header>
     <ion-toolbar color="primary" mode="ios">
@@ -27,7 +28,7 @@
 
   <ion-list class="list-md">
     
-      <button class="item-block item-md" *ngFor="let proyecto of proyectos" (click)="itemSelected(proyecto)">
+     <!--  <button class="ion-activatable item-block item-md" *ngFor="let proyecto of proyectos" (click)="itemSelected(proyecto)">
           <ion-item class="item-md ">
             <ion-label class="label-md item-md2">
               <div class="item-inner">
@@ -36,8 +37,17 @@
             </div>
             </ion-label>
       </ion-item>
-      </button>
+      <ion-ripple-effect></ion-ripple-effect>
+      </button> -->
+
+      <ion-item class="" *ngFor="let proyecto of proyectos" (click)="itemSelected(proyecto)" style="width: 95%;">
+        <ion-label style="font-size: 16px; color: #808080;">
+            <ion-icon slot="start" name="folder" style="font-size: 15px; color: #808080;"></ion-icon>
+            {{proyecto.description}}
+        </ion-label>
+      </ion-item>
     
   </ion-list>
   
 </ion-content>
+</ion-app>

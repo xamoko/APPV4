@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'evidencia-tarea', loadChildren: './pages/evidencia-tarea/evidencia-tarea.module#EvidenciaTareaPageModule' },
   { path: 'detalle-foto-avance', loadChildren: './pages/detalle-foto-avance/detalle-foto-avance.module#DetalleFotoAvancePageModule' },
   { path: 'fotos-evidencia-tarea', loadChildren: './pages/fotos-evidencia-tarea/fotos-evidencia-tarea.module#FotosEvidenciaTareaPageModule' },
-  { path: 'detalle-fotos-evidencia-tarea', loadChildren: './pages/detalle-fotos-evidencia-tarea/detalle-fotos-evidencia-tarea.module#DetalleFotosEvidenciaTareaPageModule' }
+  { path: 'detalle-fotos-evidencia-tarea', loadChildren: './pages/detalle-fotos-evidencia-tarea/detalle-fotos-evidencia-tarea.module#DetalleFotosEvidenciaTareaPageModule' },
+  { path: 'signaturepage', loadChildren: './pages/signaturepage/signaturepage.module#SignaturepagePageModule' }
 ];
 
 @NgModule({

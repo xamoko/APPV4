@@ -44,7 +44,7 @@ export class AvanceTareaPage implements OnInit {
 
   ngOnInit() {
 
-    this.items = this.route.snapshot.params;
+	this.items = this.route.snapshot.params;
     /* this.item = this.items.data.item;
 		this.evidencia = this.items.data.evidencia;
     this.FBcode = this.items.data.item; */
@@ -136,62 +136,61 @@ export class AvanceTareaPage implements OnInit {
 
 	async takePicturesCamera(){
 		const options: CameraOptions = {
-		  quality: 100,
-		  destinationType: this.camera.DestinationType.DATA_URL,
-		  /* sourceType: this.camera.PictureSourceType.PHOTOLIBRARY, */
-		  encodingType: this.camera.EncodingType.JPEG,
-		  mediaType: this.camera.MediaType.PICTURE,
-		  targetWidth: 1024,
-		  targetHeight: 768,
-		  saveToPhotoAlbum: true,
-		   correctOrientation: true,
-		   allowEdit: true,
-		}
-	  
-		this.geolocation.getCurrentPosition().then((resp) => {
-		  console.log("Coordenadas 1: "+resp.coords.latitude, resp.coords.longitude);
-		  this.longitud = resp.coords.longitude;
-		  this.latitud = resp.coords.latitude;
-		 }).catch((error) => {
-		   console.log('Error getting location', error);
-		 });
-		 
-	  
-		const result = await this.camera.getPicture(options); 
-		  const image = `data:image/jpeg;base64,${result}`;
-		  const a = Date();
-		  
-	  
-		  let tareaid = this.sqliteService.GetTareaId();
-		  const idd = Math.random().toString(36).substring(2);
-		  /* const file = this.Image[0].image; */
-		  const file = `data:image/jpeg;base64,${result}`;
-		  const filePath = `fotosAvance/${tareaid}/${idd}`;
-			  /* const ref = this.storage.ref(filePath);
-		  const task = this.storage.upload(filePath, file); */
-		  const pictures = this.storage.ref(filePath);
-		  var task = pictures.putString(image, 'data_url');
-		  pictures.getDownloadURL().subscribe(ur =>{
-			console.log("nueva funcion: "+ur);
-		  } );
-		  
-		  console.log("a punto de entrar");
-		  var tar = parseFloat(tareaid);
-		  task.snapshotChanges().pipe( finalize(() => pictures.getDownloadURL().subscribe(
-				  url =>{
-					  this.datas = {
-						  key: idd,
-						  nombre: "Foto de avance de la tarea: "+this.item.nombreTarea+". Foto desde la cámara" ,
-						  url: url,
-						  idTarea: tar,
-						  usuario: this.sqliteService.GerUserId(),
-						  latitud: this.latitud,
-						  longitud: this.longitud
-					  } 
-					  console.log(JSON.stringify(this.datas));
-					  this.firestore.collection('fotosAvance').doc(`${tar}`).collection('fotos').add(this.datas);
-				  }
-			  ))).subscribe();
+			quality: 100,
+			destinationType: this.camera.DestinationType.DATA_URL,
+			/* sourceType: this.camera.PictureSourceType.PHOTOLIBRARY, */
+			encodingType: this.camera.EncodingType.JPEG,
+			mediaType: this.camera.MediaType.PICTURE,
+			targetWidth: 1024,
+			targetHeight: 768,
+			saveToPhotoAlbum: true,
+			 correctOrientation: true,
+			 allowEdit: true,
+		  }
+		
+		  this.geolocation.getCurrentPosition().then((resp) => {
+			console.log("Coordenadas 1: "+resp.coords.latitude, resp.coords.longitude);
+			this.latitud = resp.coords.latitude,
+			this.longitud = resp.coords.longitude
+		   }).catch((error) => {
+			 console.log('Error getting location', error);
+		   });
+		   
+		
+		  const result = await this.camera.getPicture(options); 
+			const image = `data:image/jpeg;base64,${result}`;
+			const a = Date();
+			
+		
+			let tareaid = this.sqliteService.GetTareaId();
+			const idd = Math.random().toString(36).substring(2);
+			/* const file = this.Image[0].image; */
+			const file = `data:image/jpeg;base64,${result}`;
+			const filePath = `fotosAvance/${tareaid}/${idd}`;
+				/* const ref = this.storage.ref(filePath);
+			const task = this.storage.upload(filePath, file); */
+			const pictures = this.storage.ref(filePath);
+			var task = pictures.putString(image, 'data_url');
+			pictures.getDownloadURL().subscribe(ur =>{
+			  console.log("nueva funcion: "+ur);
+			} );
+			
+			console.log("a punto de entrar");
+			var tar = parseFloat(tareaid);
+			task.snapshotChanges().pipe( finalize(() => pictures.getDownloadURL().subscribe(
+					url =>{
+						this.datas = {
+							key: idd,
+							nombre:"Foto de avance de la tarea: "+this.items.nombreTarea+". Foto desde la cámara",
+							url: url,
+							idTarea: tar,
+							latitud: this.latitud,
+							longitud: this.longitud
+						} 
+						console.log(JSON.stringify(this.datas));
+						this.firestore.collection('fotosAvance').doc(`${tar}`).collection('fotos').add(this.datas);
+					}
+				))).subscribe();
 	  
 		}
 
@@ -243,7 +242,7 @@ export class AvanceTareaPage implements OnInit {
 						url =>{
 							this.datas = {
 								key: idd,
-								nombre:"Foto de avance de la tarea: "+this.item.nombreTarea+". Foto desde la galería",
+								nombre:"Foto de avance de la tarea: "+this.items.nombreTarea+". Foto desde la galería",
 								url: url,
 								idTarea: tar,
 								latitud: this.latitud,
@@ -262,10 +261,13 @@ export class AvanceTareaPage implements OnInit {
 			}
 
 
-	Open(page: string, registro: string) {
-		let item = this.items;
+	Open(page: string, registro, latitud, longitud) {
+		let item = this.todo;
 		
-
+		console.log("latitud: ", latitud);
+    	console.log("longitud: ",longitud);
+		
+		console.log("todo: ",JSON.stringify(item));
 		switch (page) {
 			case "photo": {
 				/* this.navCtrl.push(NuevoregistroPage, { item: item }); */
@@ -276,7 +278,7 @@ export class AvanceTareaPage implements OnInit {
 				break;
 			}
 			case "D": {
-				this.navCtrl.navigateForward(['/menu/first/detalle-foto-avance', registro, item ]);
+				this.navCtrl.navigateForward(['/menu/first/detalle-foto-avance', {registro: JSON.stringify(registro), item: JSON.stringify(item), lat: latitud, lon: longitud }]);
 				//this.router.navigate(['/menu/first/detalle-foto-avance' ,registro]);
 				break;
 			}

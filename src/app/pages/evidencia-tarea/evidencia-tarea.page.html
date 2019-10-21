@@ -35,10 +35,16 @@
             {{ listanormas.policy_description }}
         </button> -->
         <div *ngFor="let specNorma of listanormas.NormaEspecItem">
-          <button ion-item class="item-accordion" (click)="taskSelected(specNorma, specNorma.firebaseCode)" *ngIf="isGroupShown2(normas, listanormas)" style="margin-left: 40px;">
+          <!-- <button ion-item class="item-accordion" (click)="taskSelected(specNorma, specNorma.firebaseCode)" *ngIf="isGroupShown2(normas, listanormas)" style="margin-left: 40px;">
              {{ specNorma.policy_specification_description }}
-             <!-- {{ specNorma.firebaseCode }} -->
-          </button>
+             
+          </button> -->
+          <ion-item>
+              <ion-label (click)="taskSelected(specNorma, specNorma.firebaseCode)" *ngIf="isGroupShown2(normas, listanormas)" style="margin-left: 40px; color: gray" class="ion-activatable">
+                  {{ specNorma.policy_specification_description }}
+                  <ion-ripple-effect></ion-ripple-effect>
+              </ion-label>
+            </ion-item>
         </div>
       </div>
     </div>

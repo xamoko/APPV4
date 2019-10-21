@@ -6,6 +6,7 @@ import { Proveedor1Provider } from '../../services/proveedor1/proveedor1';
 import {Location} from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { SignaturepagePage } from '../signaturepage/signaturepage.page';
 
 @Component({
   selector: 'app-tab3',
@@ -130,9 +131,11 @@ export class Tab3Page implements OnInit {
     });
   }
 
-  openSignatureModel(){
-    /* let modal = this.modal.create(SignaturePage);
-    modal.present(); */
+  async openSignatureModel(){
+      const modal = await this.modal.create({
+        component: SignaturepagePage
+      });
+      return await modal.present();
   }
 
   swipeEvent(e) {

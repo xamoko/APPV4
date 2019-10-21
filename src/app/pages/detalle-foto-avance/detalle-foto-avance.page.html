@@ -12,22 +12,26 @@
 		<ion-item>
 			<ion-slides>
 				<ion-slide (ionSlideDidChange)="slideChanged()">
-					<img [src]="registro.url">
+					<img [src]="registros">
 				</ion-slide>
 			</ion-slides>
 		</ion-item>
 	</div>
 
-	<ion-grid>
+	<ion-grid clas="grid">
 		<ion-row justify-content-start>
-			<ion-col col-12>
-				<ion-card>
-					<h2 style=" font-size: 30px; text-transform: uppercase; text-align: left; border-bottom: 1px solid;">Detalles:</h2>
+			<ion-col size="12">
+				<ion-card class="card-md">
+					<h2 style=" font-size: 30px; text-transform: uppercase; text-align: left; border-bottom: 1px solid; color: black;">Detalles:</h2>
+					<ion-item>
+						<ion-label>Ubicación:</ion-label>
+						<ion-label>{{ latitud }}{{ longitud }}</ion-label>
+					</ion-item>
 				</ion-card>
 			</ion-col>
-			<ion-col col-12 style="margin-left: auto; margin-right: auto">
+			<ion-col size="12" style="margin-left: auto; margin-right: auto">
 				<div *ngFor="let item of items">
-					<button class="actions-detail-button-width" ion-button icon-right round (click)="vistaPanoramica(item)">
+					<button class="actions-detail-button-width button-round-md button-md " ion-button icon-right round (click)="vistaPanoramica(item)">
 							Enviar a Supervisor
 							<ion-icon name="md-exit"></ion-icon>
 						</button>

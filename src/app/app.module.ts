@@ -37,16 +37,20 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from './environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { SignaturepagePage } from '../app/pages/signaturepage/signaturepage.page';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 
 library.add(fas, far, fab);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignaturepagePage
   ],
   entryComponents: [
-    DescripcionTareaPage
+    DescripcionTareaPage,
+    SignaturepagePage
   ],
   imports: [
     BrowserModule, 
@@ -62,7 +66,8 @@ library.add(fas, far, fab);
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireModule,
     AngularFireStorageModule,
-		AngularFireDatabaseModule,
+    AngularFireDatabaseModule,
+    SignaturePadModule
     ],
   providers: [
     StatusBar,

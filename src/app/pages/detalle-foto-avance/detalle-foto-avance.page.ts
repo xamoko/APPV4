@@ -7,6 +7,7 @@ import { SqliteProvider } from '../../services/sqlite/sqlite';
 import { AngularFirestore,AngularFirestoreDocument,AngularFirestoreCollection  } from 'angularfire2/firestore';
 import { NavController } from '@ionic/angular';
 import {Location} from '@angular/common';
+import { DomSanitizer, SafeUrl, SafeResourceUrl, SafeValue, SafeHtml, SafeScript } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-detalle-foto-avance',
@@ -15,16 +16,32 @@ import {Location} from '@angular/common';
 })
 export class DetalleFotoAvancePage implements OnInit {
 
-  registro;
+  registros: SafeResourceUrl;
+  registro: any;
+  item
   items=[];
   link;
+  img;
+  latitud;
+  longitud;
 
-  constructor(public http: Http, private route: ActivatedRoute, private router: Router, public sqliteService: SqliteProvider, private firestore: AngularFirestore, public navCtrl: NavController, private _location: Location) { }
+  constructor(public http: Http, private route: ActivatedRoute, private router: Router, public sqliteService: SqliteProvider, private firestore: AngularFirestore, public navCtrl: NavController, private _location: Location, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.registro = this.route.snapshot.params;
+    this.registro = this.route.snapshot.paramMap.get("registro");
+    this.item = this.route.snapshot.paramMap.get("item");
+    this.latitud = this.route.snapshot.paramMap.get("lat");
+    this.longitud = this.route.snapshot.paramMap.get("lon");
 
-    console.log(JSON.stringify(this.registro));
+    var img = this.registro;
+
+    this.registros = this.sanitizer.bypassSecurityTrustUrl(img.substring(1));
+
+    console.log("registro",this.registro);
+    console.log("items",this.item);
+    console.log("latitud: ", this.latitud);
+    console.log("longitud: ",this.longitud);
+
 
     this.firestore.collection("ServiceNetwork").snapshotChanges().subscribe(data =>{
 			this.items=[];
@@ -41,6 +58,11 @@ export class DetalleFotoAvancePage implements OnInit {
 
   }
 
+  getImgContent(): SafeUrl {
+    return this.registros;
+    
+}
+
   BotonRegresar(){
     this._location.back();
     console.log("regresar");
@@ -48,7 +70,7 @@ export class DetalleFotoAvancePage implements OnInit {
 
   vistaPanoramica(item){
 		this.firestore.doc(`ServiceNetwork/${item.id}`).delete();
-		this.firestore.collection('ServiceNetwork').add({url:this.registro.url});
+		this.firestore.collection('ServiceNetwork').add({url:this.registro});
 	}
 
 }

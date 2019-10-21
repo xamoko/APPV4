@@ -88,6 +88,10 @@ var map = {
 	],
 	"./pages/modal/modal.module": [
 		"./src/app/pages/modal/modal.module.ts"
+	],
+	"./pages/signaturepage/signaturepage.module": [
+		"./src/app/pages/signaturepage/signaturepage.module.ts",
+		"pages-signaturepage-signaturepage-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -549,7 +553,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar color=\"primary\" mode=\"ios\">\n        <ion-title><span style=\"font-size: 17px; color: #fff\">{{ item.nombreTarea }} </span></ion-title>\n        <ion-buttons slot=\"start\">\n            <ion-menu-button></ion-menu-button>\n            <ion-icon icon=\"../../assets/icon/arrow-left-solid.svg\" (click)=\"BotonRegresar()\"></ion-icon>\n        </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Descripcion</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.description }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Categoria</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.categoria }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Subcategoria</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.subcategoria }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Unidad</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.unidad }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Cantidad</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.cantidad }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Instalado</ion-label>\n            <!-- <p class=\"descriptions-detail\">\n              {{ avanceActual }}\n            </p> -->\n            <ion-input  value=\"{{ avanceActual }}\" readonly onLoad=\"iniciarInsalado()\"></ion-input>\n            \n            <button ion-button (click)=\"openModal()\">Agregar </button>\n              \n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start>\n          <ion-col col-12>\n              <ion-label class=\"labels-detail\">Porcentaje de avance: <span style=\"background: #488AFF; border-radius: 10px; color:white; padding: 0px 11px; font-size: 17px;\"> {{ knobValues }} </span></ion-label>\n            <ion-item class=\"items-detail\">\n                \n                    <ion-select [(ngModel)]=\"knobValues\" (ionChange)=\"porcentaje($event)\">\n                      <ion-select-option value=\"0\">0%</ion-select-option>\n                      <ion-select-option value=\"20\">20%</ion-select-option>\n                      <ion-select-option value=\"40\">40%</ion-select-option>\n                      <ion-select-option value=\"50\">50%</ion-select-option>\n                      <ion-select-option value=\"60\">60%</ion-select-option>\n                      <ion-select-option value=\"80\">80%</ion-select-option>\n                      <ion-select-option value=\"100\">100%</ion-select-option>\n                    </ion-select>\n                    \n                  \n              <!-- ion-range min=\"0\" max=\"100\"  color=\"secondary\" pin=\"true\" [(ngModel)]=\"item.completion_percent\">\n                <ion-label range-left>0</ion-label>\n                <ion-label range-right>100</ion-label>\n              </ion-range> -->\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Subcontrata</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.subcontrata }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Empleado</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.empleado }}\n            </p>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col size=\"12\">\n            <ion-label class=\"labels-detail\">Fechas</ion-label>\n            <ion-col size=\"4\">\n              <ion-icon class=\"\" item-left name=\"calendar\"></ion-icon> {{ item.fechaInicio }}\n            </ion-col>\n            <ion-col size=\"4\">\n              a\n            </ion-col>\n            <ion-col size=\"4\">\n              <ion-icon class=\"\" item-left name=\"calendar\"></ion-icon> {{ item.fechaFin }}\n            </ion-col>\n          </ion-col>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-col col-12>\n            <ion-label class=\"labels-detail\">Estatus</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.estatus }}\n            </p>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    \n      <ion-grid>\n        <ion-row class=\"actions-detail\">\n          <ion-col size=\"12\">\n            <!-- <ion-col size=\"6\">\n              <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('avance')\">\n                AVANCE\n                <ion-icon name=\"images\"></ion-icon>\n              </button>\n            </ion-col>\n            <ion-col size=\"6\">\n              <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('evidencia')\">\n                EVIDENCIA\n                <ion-icon name=\"grid\"></ion-icon>\n              </button>\n            </ion-col> -->\n          </ion-col>\n        </ion-row>\n        <ion-row class=\"actions-detail\">\n          <ion-col size=\"12\">\n            <ion-col size=\"6\">\n             <!--  <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('notas')\">\n                NOTAS\n                <ion-icon name=\"clipboard\"></ion-icon>\n              </button> -->\n            </ion-col>\n            <ion-col size=\"6\">\n              <!-- <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('tickets')\">\n                TICKETS\n                <ion-icon name=\"build\"></ion-icon>\n              </button> -->\n            </ion-col>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    \n      <!--div class=\"show-list-numbers-and-dots\">\n        <p style=\"color:#000000;font-size:19px;\">\n          <strong>{{ item.Descrip }}</strong>\n        </p>\n      </div>\n      <form id=\"canalizaciNCCTV-form3\" class=\"list\">\n        <ion-item class=\"range range-positive\" id=\"canalizaciNCCTV-range1\">Avance\n          <input type=\"range\" value=\"50\" min=\"0\" max=\"100\" step=\"1\">\n        </ion-item>\n      </form>\n      <div id=\"canalizaciNCCTV-button-bar1\" class=\"button-bar\">\n        <button id=\"canalizaciNCCTV-button5\" class=\"button button-dark button-block icon ion-ios-camera\"></button>\n        <button id=\"canalizaciNCCTV-button6\" class=\"button button-dark button-block icon ion-android-attach\"></button>\n        <button id=\"canalizaciNCCTV-button7\" class=\"button button-dark button-block icon ion-android-clipboard\"></button>\n      </div-->\n      \n</ion-content>\n\n<ion-footer>\n    <ion-grid>\n        <!-- <ion-row>\n            <ion-col size=\"2\">\n                \n                <ion-label class=\"labels-detail\">Porcentaje de avance: <span style=\"background: #488AFF; border-radius: 10px; color:white; padding: 0px 11px;\"> {{ knobValues }} </span></ion-label>\n              \n                <ion-item style=\"margin-top: 10px\">\n                  \n                  \n                      <ion-range min=\"0\" max=\"100\" pin=\"true\" snaps=\"true\" style=\"padding-top: 20px\" [(ngModel)]=\"knobValues\" (ionChange)=\"porcentaje($event)\" >\n                    \n                    <ion-label range-left>0</ion-label>\n                    <ion-label range-right>100</ion-label>\n                  </ion-range>\n                </ion-item>\n              \n              \n              </ion-col>\n        </ion-row>   -->\n      <ion-row>\n        \n        <ion-col size=\"12\">\n          <!-- <ion-col size=\"6\">\n            <ion-icon class=\"icon-action-buttons\" name=\"camera\" (click)=\"Open('photo')\"></ion-icon>\n          </ion-col>\n          <ion-col size=\"6\">\n            <ion-icon class=\"icon-action-buttons\" name=\"images\" (click)=\"Open('photoGallery')\"></ion-icon>\n          </ion-col> -->\n          <ion-col size=\"6\">\n            <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('avance')\">\n              AVANCE\n              <ion-icon name=\"images\"></ion-icon>\n            </button>\n          </ion-col>\n          <ion-col size=\"6\">\n            <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('evidencia')\">\n              EVIDENCIA\n              <ion-icon name=\"grid\"></ion-icon>\n            </button>\n          </ion-col>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n    <ion-toolbar color=\"primary\" mode=\"ios\">\n        <ion-title><span style=\"font-size: 17px; color: #fff\">{{ item.nombreTarea }} </span></ion-title>\n        <ion-buttons slot=\"start\">\n            <ion-menu-button></ion-menu-button>\n            <ion-icon icon=\"../../assets/icon/arrow-left-solid.svg\" (click)=\"BotonRegresar()\"></ion-icon>\n        </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <ion-grid class=\"grid\">\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col class=\"col\" col-12>\n            <ion-label class=\"labels-detail label-md\">Descripcion</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.description }}\n            </p>\n          </ion-col>\n          </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Categoria</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.categoria }}\n            </p>\n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Subcategoria</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.subcategoria }}\n            </p>\n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Unidad</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.unidad }}\n            </p>\n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Cantidad</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.cantidad }}\n            </p>\n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Instalado</ion-label>\n            <!-- <p class=\"descriptions-detail\">\n              {{ avanceActual }}\n            </p> -->\n            <ion-input  value=\"{{ avanceActual }}\" readonly onLoad=\"iniciarInsalado()\"></ion-input>\n            \n            <button ion-button (click)=\"openModal()\" class=\"button-md\">Agregar </button>\n              \n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start>\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col \">\n              <ion-label class=\"labels-detail label-md\">Porcentaje de avance: <span style=\"background: #488AFF; border-radius: 10px; color:white; padding: 0px 11px; font-size: 17px;\"> {{ knobValues }} </span></ion-label>\n            <ion-item class=\"items-detail\">\n                \n                    <ion-select [(ngModel)]=\"knobValues\" (ionChange)=\"porcentaje($event)\">\n                      <ion-select-option value=\"0\">0%</ion-select-option>\n                      <ion-select-option value=\"20\">20%</ion-select-option>\n                      <ion-select-option value=\"40\">40%</ion-select-option>\n                      <ion-select-option value=\"50\">50%</ion-select-option>\n                      <ion-select-option value=\"60\">60%</ion-select-option>\n                      <ion-select-option value=\"80\">80%</ion-select-option>\n                      <ion-select-option value=\"100\">100%</ion-select-option>\n                    </ion-select>\n                    \n                  \n              <!-- ion-range min=\"0\" max=\"100\"  color=\"secondary\" pin=\"true\" [(ngModel)]=\"item.completion_percent\">\n                <ion-label range-left>0</ion-label>\n                <ion-label range-right>100</ion-label>\n              </ion-range> -->\n            </ion-item>\n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Subcontrata</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.subcontrata }}\n            </p>\n          </ion-col>\n        </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Empleado</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.empleado }}\n            </p>\n          </ion-col>\n          </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n        <ion-item style=\"width: 95%;\">\n          <ion-col size=\"12\" class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Fechas</ion-label>\n            <ion-col size=\"4\">\n              <ion-icon class=\"\" item-left name=\"calendar\"></ion-icon> {{ item.fechaInicio }}\n            </ion-col>\n            <ion-col size=\"4\">\n              a\n            </ion-col>\n            <ion-col size=\"4\">\n              <ion-icon class=\"\" item-left name=\"calendar\"></ion-icon> {{ item.fechaFin }}\n            </ion-col>\n          </ion-col>\n          </ion-item>\n        </ion-row>\n        <ion-row justify-content-start class=\"row-detail\">\n          <ion-item style=\"width: 95%;\">\n          <ion-col col-12 class=\"col\">\n            <ion-label class=\"labels-detail label-md\">Estatus</ion-label>\n            <p class=\"descriptions-detail\">\n              {{ item.estatus }}\n            </p>\n          </ion-col>\n          </ion-item>\n        </ion-row>\n      </ion-grid>\n    \n      <ion-grid>\n        <ion-row class=\"actions-detail\">\n          \n          <ion-col size=\"12\">\n            <!-- <ion-col size=\"6\">\n              <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('avance')\">\n                AVANCE\n                <ion-icon name=\"images\"></ion-icon>\n              </button>\n            </ion-col>\n            <ion-col size=\"6\">\n              <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('evidencia')\">\n                EVIDENCIA\n                <ion-icon name=\"grid\"></ion-icon>\n              </button>\n            </ion-col> -->\n          </ion-col>\n        \n        </ion-row>\n        <ion-row class=\"actions-detail\">\n          \n          <ion-col size=\"12\">\n            <ion-col size=\"6\">\n             <!--  <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('notas')\">\n                NOTAS\n                <ion-icon name=\"clipboard\"></ion-icon>\n              </button> -->\n            </ion-col>\n            <ion-col size=\"6\">\n              <!-- <button class=\"actions-detail-button-width\" ion-button icon-right round (click)=\"Open('tickets')\">\n                TICKETS\n                <ion-icon name=\"build\"></ion-icon>\n              </button> -->\n            </ion-col>\n          </ion-col>\n          \n        </ion-row>\n      </ion-grid>\n    \n      <!--div class=\"show-list-numbers-and-dots\">\n        <p style=\"color:#000000;font-size:19px;\">\n          <strong>{{ item.Descrip }}</strong>\n        </p>\n      </div>\n      <form id=\"canalizaciNCCTV-form3\" class=\"list\">\n        <ion-item class=\"range range-positive\" id=\"canalizaciNCCTV-range1\">Avance\n          <input type=\"range\" value=\"50\" min=\"0\" max=\"100\" step=\"1\">\n        </ion-item>\n      </form>\n      <div id=\"canalizaciNCCTV-button-bar1\" class=\"button-bar\">\n        <button id=\"canalizaciNCCTV-button5\" class=\"button button-dark button-block icon ion-ios-camera\"></button>\n        <button id=\"canalizaciNCCTV-button6\" class=\"button button-dark button-block icon ion-android-attach\"></button>\n        <button id=\"canalizaciNCCTV-button7\" class=\"button button-dark button-block icon ion-android-clipboard\"></button>\n      </div-->\n      \n</ion-content>\n\n<ion-footer>\n    <ion-grid>\n        <!-- <ion-row>\n            <ion-col size=\"2\">\n                \n                <ion-label class=\"labels-detail\">Porcentaje de avance: <span style=\"background: #488AFF; border-radius: 10px; color:white; padding: 0px 11px;\"> {{ knobValues }} </span></ion-label>\n              \n                <ion-item style=\"margin-top: 10px\">\n                  \n                  \n                      <ion-range min=\"0\" max=\"100\" pin=\"true\" snaps=\"true\" style=\"padding-top: 20px\" [(ngModel)]=\"knobValues\" (ionChange)=\"porcentaje($event)\" >\n                    \n                    <ion-label range-left>0</ion-label>\n                    <ion-label range-right>100</ion-label>\n                  </ion-range>\n                </ion-item>\n              \n              \n              </ion-col>\n        </ion-row>   -->\n      <ion-row>\n        \n        <ion-col size=\"12\">\n          <!-- <ion-col size=\"6\">\n            <ion-icon class=\"icon-action-buttons\" name=\"camera\" (click)=\"Open('photo')\"></ion-icon>\n          </ion-col>\n          <ion-col size=\"6\">\n            <ion-icon class=\"icon-action-buttons\" name=\"images\" (click)=\"Open('photoGallery')\"></ion-icon>\n          </ion-col> -->\n          <ion-col size=\"6\">\n            <button class=\"actions-detail-button-width button-round-md button-md\" ion-button icon-right round (click)=\"Open('avance')\">\n              AVANCE\n              <ion-icon name=\"images\"></ion-icon>\n            </button>\n          </ion-col>\n          <ion-col size=\"6\">\n            <button class=\"actions-detail-button-width button-round-md button-md\" ion-button icon-right round (click)=\"Open('evidencia')\">\n              EVIDENCIA\n              <ion-icon name=\"grid\"></ion-icon>\n            </button>\n          </ion-col>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-footer>");
 
 /***/ }),
 
@@ -563,6 +567,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"primary\">\n      <ion-title>Instalado</ion-title>\n      <ion-buttons end>\n        <button ion-button (click)=\"closeModal()\">Cerrar</button>\n      </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <ion-card >\n        <div style=\"margin-left: 20%\">\n        <ion-item>\n          <ion-label>Cantidad Total de la Tarea</ion-label>\n          <ion-label style=\"font-weight: bold;\">{{ cantidad}}</ion-label>\n        </ion-item>\n    \n        <ion-item>\n          <ion-label >Avance Actual</ion-label>\n          <ion-label style=\"font-weight: bold;\">{{ avanceActual }}</ion-label>\n        </ion-item>\n    \n          <ion-item>\n            <ion-label>Agregar Avance</ion-label><br/>\n            <ion-input placeholder=\"Escriba Aqui\" [(ngModel)]=\"dato\" (ionChange)='onChangeUserValue()'></ion-input>\n          </ion-item>\n    \n          <ion-item>\n            <button ion-button color=\"danger\" style=\"border-radius: 10px;\" (click)=\"closeModal()\">Cancelar</button>\n            <button ion-button style=\"border-radius: 10px;\" (click)=\"showPrompt()\"  id=\"btn-login\" disabled>Aceptar</button>\n          </ion-item>\n    \n        </div>\n    </ion-card>\n    \n    \n</ion-content>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/signaturepage/signaturepage.page.html":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/signaturepage/signaturepage.page.html ***!
+  \***************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"primary\" mode=\"ios\">\n    <ion-title>Firma</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"padding\">\n    <signature-pad [options]=\"signaturePadOptions\" id=\"signatureCanvas\" style=\"margin-left: 5%;margin-right: 5%; \" class=\"firma\"></signature-pad>\n\n    <ion-grid>\n      <ion-row>\n\n        <ion-col size=\"4\">\n          <ion-button color=\"danger\" (click)=\"drawCancel()\">Cancelar</ion-button>\n        </ion-col>\n\n        <ion-col size=\"4\">\n            <ion-button color=\"light\" (click)=\"drawClear()\">Borrar</ion-button>\n        </ion-col>\n\n        <ion-col size=\"4\">\n            <ion-button color=\"secondary\" (click)=\"drawComplete()\">Guardar</ion-button>\n        </ion-col>\n\n      </ion-row>\n    </ion-grid>\n</ion-content>\n");
 
 /***/ }),
 
@@ -854,7 +871,8 @@ const routes = [
     { path: 'evidencia-tarea', loadChildren: './pages/evidencia-tarea/evidencia-tarea.module#EvidenciaTareaPageModule' },
     { path: 'detalle-foto-avance', loadChildren: './pages/detalle-foto-avance/detalle-foto-avance.module#DetalleFotoAvancePageModule' },
     { path: 'fotos-evidencia-tarea', loadChildren: './pages/fotos-evidencia-tarea/fotos-evidencia-tarea.module#FotosEvidenciaTareaPageModule' },
-    { path: 'detalle-fotos-evidencia-tarea', loadChildren: './pages/detalle-fotos-evidencia-tarea/detalle-fotos-evidencia-tarea.module#DetalleFotosEvidenciaTareaPageModule' }
+    { path: 'detalle-fotos-evidencia-tarea', loadChildren: './pages/detalle-fotos-evidencia-tarea/detalle-fotos-evidencia-tarea.module#DetalleFotosEvidenciaTareaPageModule' },
+    { path: 'signaturepage', loadChildren: './pages/signaturepage/signaturepage.module#SignaturepagePageModule' }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -970,6 +988,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./environments/environment */ "./src/app/environments/environment.ts");
 /* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/es2015/index.js");
 /* harmony import */ var _angular_fire_database__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/fire/database */ "./node_modules/@angular/fire/database/es2015/index.js");
+/* harmony import */ var _app_pages_signaturepage_signaturepage_page__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../app/pages/signaturepage/signaturepage.page */ "./src/app/pages/signaturepage/signaturepage.page.ts");
+/* harmony import */ var angular2_signaturepad__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! angular2-signaturepad */ "./node_modules/angular2-signaturepad/index.js");
+/* harmony import */ var angular2_signaturepad__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(angular2_signaturepad__WEBPACK_IMPORTED_MODULE_32__);
 
 
 
@@ -1004,16 +1025,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_13__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_14__["fas"], _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_15__["far"], _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_16__["fab"]);
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+            _app_pages_signaturepage_signaturepage_page__WEBPACK_IMPORTED_MODULE_31__["SignaturepagePage"]
         ],
         entryComponents: [
-            _pages_descripcion_tarea_descripcion_tarea_page__WEBPACK_IMPORTED_MODULE_22__["DescripcionTareaPage"]
+            _pages_descripcion_tarea_descripcion_tarea_page__WEBPACK_IMPORTED_MODULE_22__["DescripcionTareaPage"],
+            _app_pages_signaturepage_signaturepage_page__WEBPACK_IMPORTED_MODULE_31__["SignaturepagePage"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
@@ -1030,6 +1055,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             angularfire2__WEBPACK_IMPORTED_MODULE_27__["AngularFireModule"],
             _angular_fire_storage__WEBPACK_IMPORTED_MODULE_29__["AngularFireStorageModule"],
             _angular_fire_database__WEBPACK_IMPORTED_MODULE_30__["AngularFireDatabaseModule"],
+            angular2_signaturepad__WEBPACK_IMPORTED_MODULE_32__["SignaturePadModule"]
         ],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
@@ -1139,7 +1165,7 @@ DescripcionTareaPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2Rlc2NyaXBjaW9uLXRhcmVhL2Rlc2NyaXBjaW9uLXRhcmVhLnBhZ2Uuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".grid {\n  padding: 5px;\n  margin-left: auto;\n  margin-right: auto;\n  width: 100%;\n  display: flex;\n  flex-direction: column; }\n\npage-detail .row-detail {\n  border-bottom-style: solid;\n  border-bottom-width: 1px;\n  border-color: #b3b3b3; }\n\n.col {\n  padding: 5px;\n  position: relative;\n  width: 100%;\n  margin: 0;\n  min-height: 1px;\n  flex-basis: 0;\n  flex-grow: 1;\n  max-width: 100%; }\n\nion-label {\n  margin: 0;\n  display: block;\n  overflow: hidden;\n  flex: 1;\n  font-size: inherit;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n\n.label-md {\n  color: #595959 !important;\n  margin: 0px 0px 0px 0;\n  font-size: 11px !important; }\n\n.descriptions-detail {\n  text-align: justify;\n  padding-left: 20px;\n  font-family: \"Roboto\", \"Helvetica Neue\", sans-serif;\n  font-size: .9rem;\n  margin: 14px; }\n\n.button-md {\n  border-radius: 2px;\n  overflow: hidden;\n  height: 1.6rem;\n  font-size: .7rem;\n  font-weight: 500;\n  text-transform: uppercase;\n  color: #fff;\n  background-color: #488aff;\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1); }\n\n.button-round-md {\n  border-radius: 64px;\n  padding: 0 2.6rem; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy94YXZpZXJtb3JhbGVzL0RvY3VtZW50cy94aW5ldC9zZXJ2aWNlX25ldHdvcmtfQXBwVjQvc3JjL2FwcC9wYWdlcy9kZXNjcmlwY2lvbi10YXJlYS9kZXNjcmlwY2lvbi10YXJlYS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixXQUFXO0VBSVgsYUFBYTtFQUtiLHNCQUFzQixFQUFBOztBQUd4QjtFQUNFLDBCQUEwQjtFQUMxQix3QkFBd0I7RUFDeEIscUJBQXFCLEVBQUE7O0FBR3ZCO0VBQ0UsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixXQUFXO0VBQ1gsU0FBUztFQUNULGVBQWU7RUFHZixhQUFhO0VBSWIsWUFBWTtFQUNaLGVBQWUsRUFBQTs7QUFHakI7RUFDRSxTQUFTO0VBQ1QsY0FBYztFQUNkLGdCQUFnQjtFQUloQixPQUFPO0VBQ1Asa0JBQWtCO0VBQ2xCLHVCQUF1QjtFQUN2QixtQkFBbUIsRUFBQTs7QUFHckI7RUFDRSx5QkFBeUI7RUFDekIscUJBQXFCO0VBQ3JCLDBCQUEwQixFQUFBOztBQUk1QjtFQUNFLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsbURBQW1EO0VBQ25ELGdCQUFnQjtFQUNoQixZQUFZLEVBQUE7O0FBR2Q7RUFDRSxrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtFQUN6QixXQUFXO0VBQ1gseUJBQXlCO0VBRXpCLCtHQUErRztFQUcvRyx3SkFBd0osRUFDdUQ7O0FBSWpOO0VBQ0UsbUJBQW1CO0VBQ25CLGlCQUFpQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvZGVzY3JpcGNpb24tdGFyZWEvZGVzY3JpcGNpb24tdGFyZWEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmdyaWQge1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogLXdlYmtpdC1ib3g7XG4gICAgZGlzcGxheTogLXdlYmtpdC1mbGV4O1xuICAgIGRpc3BsYXk6IC1tcy1mbGV4Ym94O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgLXdlYmtpdC1ib3gtb3JpZW50OiB2ZXJ0aWNhbDtcbiAgICAtd2Via2l0LWJveC1kaXJlY3Rpb246IG5vcm1hbDtcbiAgICAtd2Via2l0LWZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgLW1zLWZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgfVxuXG4gIHBhZ2UtZGV0YWlsIC5yb3ctZGV0YWlsIHtcbiAgICBib3JkZXItYm90dG9tLXN0eWxlOiBzb2xpZDtcbiAgICBib3JkZXItYm90dG9tLXdpZHRoOiAxcHg7XG4gICAgYm9yZGVyLWNvbG9yOiAjYjNiM2IzO1xuICB9XG5cbiAgLmNvbHtcbiAgICBwYWRkaW5nOiA1cHg7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbjogMDtcbiAgICBtaW4taGVpZ2h0OiAxcHg7XG4gICAgLXdlYmtpdC1mbGV4LWJhc2lzOiAwO1xuICAgIC1tcy1mbGV4LXByZWZlcnJlZC1zaXplOiAwO1xuICAgIGZsZXgtYmFzaXM6IDA7XG4gICAgLXdlYmtpdC1ib3gtZmxleDogMTtcbiAgICAtd2Via2l0LWZsZXgtZ3JvdzogMTtcbiAgICAtbXMtZmxleC1wb3NpdGl2ZTogMTtcbiAgICBmbGV4LWdyb3c6IDE7XG4gICAgbWF4LXdpZHRoOiAxMDAlO1xuICB9XG5cbiAgaW9uLWxhYmVsIHtcbiAgICBtYXJnaW46IDA7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICAtd2Via2l0LWJveC1mbGV4OiAxO1xuICAgIC13ZWJraXQtZmxleDogMTtcbiAgICAtbXMtZmxleDogMTtcbiAgICBmbGV4OiAxO1xuICAgIGZvbnQtc2l6ZTogaW5oZXJpdDtcbiAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICB9XG5cbiAgLmxhYmVsLW1kIHtcbiAgICBjb2xvcjogIzU5NTk1OSAhaW1wb3J0YW50O1xuICAgIG1hcmdpbjogMHB4IDBweCAwcHggMDtcbiAgICBmb250LXNpemU6IDExcHggIWltcG9ydGFudDtcblxuICB9XG5cbiAgLmRlc2NyaXB0aW9ucy1kZXRhaWx7XG4gICAgdGV4dC1hbGlnbjoganVzdGlmeTtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gICAgZm9udC1mYW1pbHk6IFwiUm9ib3RvXCIsIFwiSGVsdmV0aWNhIE5ldWVcIiwgc2Fucy1zZXJpZjtcbiAgICBmb250LXNpemU6IC45cmVtO1xuICAgIG1hcmdpbjogMTRweDtcbiAgfVxuXG4gIC5idXR0b24tbWQge1xuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIGhlaWdodDogMS42cmVtO1xuICAgIGZvbnQtc2l6ZTogLjdyZW07XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM0ODhhZmY7XG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDJweCAycHggMCByZ2JhKDAsIDAsIDAsIDAuMTQpLCAwIDNweCAxcHggLTJweCByZ2JhKDAsIDAsIDAsIDAuMiksIDAgMXB4IDVweCAwIHJnYmEoMCwgMCwgMCwgMC4xMik7XG4gICAgYm94LXNoYWRvdzogMCAycHggMnB4IDAgcmdiYSgwLCAwLCAwLCAwLjE0KSwgMCAzcHggMXB4IC0ycHggcmdiYSgwLCAwLCAwLCAwLjIpLCAwIDFweCA1cHggMCByZ2JhKDAsIDAsIDAsIDAuMTIpO1xuICAgIC13ZWJraXQtdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpLCBjb2xvciAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpLCAtd2Via2l0LWJveC1zaGFkb3cgMzAwbXMgY3ViaWMtYmV6aWVyKDAuNCwgMCwgMC4yLCAxKTtcbiAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDMwMG1zIGN1YmljLWJlemllcigwLjQsIDAsIDAuMiwgMSksIGNvbG9yIDMwMG1zIGN1YmljLWJlemllcigwLjQsIDAsIDAuMiwgMSksIC13ZWJraXQtYm94LXNoYWRvdyAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpO1xuICAgIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMzAwbXMgY3ViaWMtYmV6aWVyKDAuNCwgMCwgMC4yLCAxKSwgYmFja2dyb3VuZC1jb2xvciAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpLCBjb2xvciAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpO1xuICAgIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMzAwbXMgY3ViaWMtYmV6aWVyKDAuNCwgMCwgMC4yLCAxKSwgYmFja2dyb3VuZC1jb2xvciAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpLCBjb2xvciAzMDBtcyBjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpLCAtd2Via2l0LWJveC1zaGFkb3cgMzAwbXMgY3ViaWMtYmV6aWVyKDAuNCwgMCwgMC4yLCAxKTtcbiAgICBcbiAgfVxuXG4gIC5idXR0b24tcm91bmQtbWQge1xuICAgIGJvcmRlci1yYWRpdXM6IDY0cHg7XG4gICAgcGFkZGluZzogMCAyLjZyZW07XG4gIH0iXX0= */");
 
 /***/ }),
 
@@ -1211,6 +1237,7 @@ let DescripcionTareaPage = class DescripcionTareaPage {
         };
         this.http.post(url, JSON.stringify(data), { headers: _api_component__WEBPACK_IMPORTED_MODULE_7__["headers2"] }).subscribe(Response => {
             var respuesta = Response.json();
+            console.log("Avance Actual: " + JSON.stringify(respuesta));
             respuesta.forEach(element => {
                 element.TotalInstalado;
                 this.avanceActual = element.TotalInstalado;
@@ -1552,6 +1579,128 @@ ModalPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"], _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_4__["SqliteProvider"], _angular_http__WEBPACK_IMPORTED_MODULE_5__["Http"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"]])
 ], ModalPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/signaturepage/signaturepage.page.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/signaturepage/signaturepage.page.scss ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("signature-pad canvas {\n  --border: 1px dashed #333333;\n  margin-top: 1.5%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy94YXZpZXJtb3JhbGVzL0RvY3VtZW50cy94aW5ldC9zZXJ2aWNlX25ldHdvcmtfQXBwVjQvc3JjL2FwcC9wYWdlcy9zaWduYXR1cmVwYWdlL3NpZ25hdHVyZXBhZ2UucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksNEJBQVM7RUFDVCxnQkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3NpZ25hdHVyZXBhZ2Uvc2lnbmF0dXJlcGFnZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJzaWduYXR1cmUtcGFkIGNhbnZhcyB7XG4gICAgLS1ib3JkZXI6IDFweCBkYXNoZWQgIzMzMzMzMztcbiAgICBtYXJnaW4tdG9wOiAxLjUlO1xuICB9XG5cbiAgIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/pages/signaturepage/signaturepage.page.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/pages/signaturepage/signaturepage.page.ts ***!
+  \***********************************************************/
+/*! exports provided: SignaturepagePage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignaturepagePage", function() { return SignaturepagePage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var angular2_signaturepad_signature_pad__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-signaturepad/signature-pad */ "./node_modules/angular2-signaturepad/signature-pad.js");
+/* harmony import */ var angular2_signaturepad_signature_pad__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_signaturepad_signature_pad__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/storage/es2015/index.js");
+/* harmony import */ var _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/sqlite/sqlite */ "./src/app/services/sqlite/sqlite.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+
+
+
+
+
+
+
+
+let SignaturepagePage = class SignaturepagePage {
+    constructor(navCtrl, navParams, firestore, sqliteService, storage, toastCtrl, /* private screenOrientation: ScreenOrientation */ _location, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.firestore = firestore;
+        this.sqliteService = sqliteService;
+        this.storage = storage;
+        this.toastCtrl = toastCtrl;
+        this._location = _location;
+        this.modalCtrl = modalCtrl;
+        this.signaturePadOptions = {
+            'minWidth': 1,
+            'canvasWidth': window.innerWidth * 0.90,
+            'canvasHeight': window.innerHeight * 0.65,
+            'margin-left': window.innerWidth * 0.05,
+            'margin-right': window.innerWidth * 0.05
+        };
+    }
+    ngOnInit() {
+    }
+    drawComplete() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.signatureImage = this.signaturePad.toDataURL();
+            let ProjectId = this.sqliteService.GerProjectId();
+            const filePath = `${ProjectId}/Firma del proyecto`;
+            const pictures = this.storage.ref(filePath);
+            var task = pictures.putString(this.signatureImage, 'data_url');
+            const toast = yield this.toastCtrl.create({
+                message: 'Firma agregada satisfactoriamente.',
+                duration: 3000
+            });
+            toast.present();
+            /* this.navCtrl.pop();
+            this._location.back();*/
+            this.modalCtrl.dismiss({
+                'dismissed': true
+            });
+        });
+    }
+    drawClear() {
+        /* this.signaturePad.clear(); */
+        this.modalCtrl.dismiss({
+            'dismissed': true
+        });
+    }
+    drawCancel() {
+        /*  this.signaturePad.clear();
+     this.navCtrl.pop();
+       this._location.back();*/
+        this.modalCtrl.dismiss({
+            'dismissed': true
+        });
+    }
+};
+SignaturepagePage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavParams"] },
+    { type: angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"] },
+    { type: _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_6__["SqliteProvider"] },
+    { type: _angular_fire_storage__WEBPACK_IMPORTED_MODULE_5__["AngularFireStorage"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(angular2_signaturepad_signature_pad__WEBPACK_IMPORTED_MODULE_2__["SignaturePad"], { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", angular2_signaturepad_signature_pad__WEBPACK_IMPORTED_MODULE_2__["SignaturePad"])
+], SignaturepagePage.prototype, "signaturePad", void 0);
+SignaturepagePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-signaturepage',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./signaturepage.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/signaturepage/signaturepage.page.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./signaturepage.page.scss */ "./src/app/pages/signaturepage/signaturepage.page.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavParams"], angularfire2_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"], _services_sqlite_sqlite__WEBPACK_IMPORTED_MODULE_6__["SqliteProvider"], _angular_fire_storage__WEBPACK_IMPORTED_MODULE_5__["AngularFireStorage"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ToastController"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
+], SignaturepagePage);
 
 
 
